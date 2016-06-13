@@ -1,0 +1,1368 @@
+JSESSIONID=F66AF0AC60371DC4245D2C9D0A14852E
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<title>ϵͳ</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF8">
+<LINK REL="STYLESHEET" TYPE="text/css" HREF="include/kemIE_zh_CN.css"  >
+
+<SCRIPT language=JavaScript>
+<!--
+   var stLocale = 'zh_CN';
+   var stReqAlertMsg='请输入必须填写栏';
+   var stPasswordMsg='密码必须多于4个字符!';
+   var arr_months =
+                 [ "一月",
+                   "二月",
+                   "三月",
+                   "四月",
+                   "五月",
+                   "六月",
+                   "七月",
+                   "八月",
+                   "九月",
+                   "十月",
+                   "十一月",
+                   "十二月"
+                 ];
+
+   var week_days =
+                [  "日",
+                   "一",
+                   "二",
+                   "三",
+                   "四",
+                   "五",
+                   "六"
+                ];
+
+
+   var stInvalidDate = "日期格式不对";
+   var stToday = "今天";
+   var stSelectFilterFirst = "请先选择筛选条件";
+
+   var Have_no_groupable_field='业务分析定义中没有定义分组字段';
+   var Have_no_searchable_field='业务分析定义中没有定义查询字段';
+   var Have_no_statistic_field='业务分析定义中没有定义统计指标';
+
+   var Should_be_int='应为整数';
+   var Should_be_float='应为浮点数';
+//-->
+</SCRIPT>
+
+
+<SCRIPT language=JavaScript src="include/common.js"></SCRIPT>
+<SCRIPT language=JavaScript src="attendance/TRecord.js"></SCRIPT>
+
+
+
+<SCRIPT language=JavaScript>
+  var stDelConf="删除所选上下班记录?";
+</SCRIPT>
+
+</head>
+<script language=Javascript>
+function add_frequent_link() {
+
+  if ((typeof document.form1 == "undefined")||(typeof document.form1.currentURL == "undefined"))
+    return alert("对不起，当前页面不能加入常做事项。");
+
+  var url = document.form1.currentURL.value;
+  if ((url == null) || (url == ""))
+  {
+    if (typeof document.form1.linkURL == "undefined")
+      return alert("对不起，当前页面不能加入常做事项。");
+
+    url = document.form1.linkURL.value;
+    if ((url == null) || (url == ""))
+      return alert("对不起，当前页面不能加入常做事项。");
+  }
+  openpopup("AddFrequentLinkView.action?url="+escape(url),"Lookup");
+}
+</script>
+
+
+
+
+
+
+
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body TOPMARGIN="0" RIGHTMARGIN="0" LEFTMARGIN="0" MARGINWIDTH="0" MARGINHEIGHT="0" onClick="javascript:popupWindowFocus();" >
+
+<table width="98%" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+  <td align="left" valign="top">
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<form method="post" name="formSearch" target="_self" action="TRecordList.action?currentPage=1&newSearch=1" >
+<table width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td height="15"><img src="images/1.gif" width="1" height="1"></td>
+  </tr>
+</table>
+<table width="95%" height="25" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td width="150" align="left" valign="bottom" > 
+      <table border="0" align="left" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td width="18" height="22" align="left" valign="top"><img src="images/BD1.gif" width="18" height="22"></td>
+          <td valign="bottom" background="images/BD2.gif" class="form4">查找条件</td>
+          <td width="27" height="22" align="left" valign="top"><img src="images/BD3.gif" width="27" height="22"></td>
+        </tr>
+      </table> 
+    </td>
+	<td valign="bottom" class="form4"><font color="#CC0000"></font>&nbsp</td>
+    <td width="360" align="right" valign="top"> 
+      <table height="26" border="0" cellpadding="0" cellspacing="0">
+        <tr> 
+		<td><input  class="Button" type="button" value="查找" onclick="javascript:search()"> </td>						
+			
+		
+		
+        </tr>
+      </table></td>
+  </tr>
+</table>
+<table width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td width="50%" height="9" align="left" valign="top" background="images/bdm.gif"><img src="images/bdleft.gif" width="3" height="9"></td>
+    <td width="50%" height="9" align="right" valign="top" background="images/bdm.gif"><img src="images/bdri.gif" width="70" height="9"></td>
+  </tr>
+</table>
+
+
+<table width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="3" align="left" valign="top" background="images/bdleft1.gif">
+	<img src="images/bdleft1.gif" width="3" height="1"></td>
+    <td align="center" valign="top" bgcolor="DCE4EF">
+	   <table width="100%" height="100%" border="0" cellpadding="10" cellspacing="0">
+        <tr>
+          <td align="right" valign="top" width="50%">
+  			<table width="100%" height="20" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="B5DBF7">
+			 <tr bgcolor="B5DBF7">
+				<td align="right" valign="top" width="50%">
+					 <table border="0" align="right" width="100%" cellpadding="1" cellspacing="1">
+					            <tr><td class="DataLabel" width=25% height='25'>姓名&nbsp;</td>
+       <td class="DataField" height='25'><input type="text" name="f_empinfofullname" value="" style="height:22px; width:150px"></td></tr>
+       <tr><td class="DataLabel" width=25% height='25'>部门&nbsp;</td>
+       <td class="DataField" height='25'>
+	   <input type="hidden" name="f_orgid_op" value="">	
+	   <select name="f_orgid" size="1" onchange="if (this.value==-1) formSearch.f_orgid_op.value=''; else formSearch.f_orgid_op.value='=';" style="height:20px"><option value="-1">全部</option>
+<option value="1">公司</option>
+<option value="100107">离职组</option>
+<option value="100185">产品行销部</option>
+<option value="100128">总办</option>
+<option value="100129">资源管理部</option>
+<option value="100130">政府与中小企业事业部</option>
+<option value="100131">运营商事业部</option>
+<option value="100132">运营商产品事业部</option>
+<option value="100133">创新技术部</option>
+<option value="100134">新媒体事业部</option>
+<option value="100135">销售运营管理部</option>
+<option value="100136">基础运维部</option>
+<option value="100137">台湾分公司</option>
+<option value="100138">数据云事业部</option>
+<option value="100139">首鸣国际数据中心事业部</option>
+<option value="100140">市场部</option>
+<option value="100141">人力资源部</option>
+<option value="100142">企业事业部</option>
+<option value="100143">企业产品事业部</option>
+<option value="100144">美分</option>
+<option value="100145">技术委员会办公室</option>
+<option value="100146">计划业务部</option>
+<option value="100147">互联网事业部</option>
+<option value="100148">公共关系事业部</option>
+<option value="100149">产品管理部</option>
+<option value="100150">产品创新事业部</option>
+<option value="100151">采购部</option>
+<option value="100152">财务商务部</option>
+<option value="100153">SNP</option>
+<option value="100154">NA研发</option>
+<option value="100155">CSP</option>
+<option value="100156">Cache 事业部</option>
+<option value="100157">行政部</option>
+<option value="100158">软件质量部</option>
+<option value="100159">香港分公司</option>
+<option value="100160">研发运维管理中心</option>
+<option value="100161">质量管理部</option>
+<option value="100162">ERP中心</option>
+<option value="100163">内控中心</option>
+<option value="100164">法务中心</option>
+<option value="100165">流程管理部</option>
+<option value="100166">云平台</option>
+<option value="100167">业务运维部</option>
+<option value="100168">海外事业部</option>
+<option value="100169">保洁组</option>
+<option value="100170">全球拓展部</option>
+<option value="100171">投资者关系部</option>
+<option value="100172">产品市场部</option>
+<option value="100174">创新技术组-cache组</option>
+<option value="100176">豆豆</option>
+<option value="100177">IT中心</option>
+<option value="100178">创新业务事业部</option>
+<option value="100179">广电及新媒体</option>
+<option value="100180">营销运营中心</option>
+<option value="100181">客户解决方案中心</option>
+<option value="100182">咖啡吧</option>
+<option value="100183">运营商销售事业部</option>
+<option value="100184">大客户事业部</option>
+<option value="100186">平台与新产品部</option>
+<option value="100187">互联网销售事业部</option>
+<option value="100188">互联网交换中心</option>
+<option value="100189">企业销售事业部</option>
+<option value="100190">页面动态产品部</option>
+<option value="100191">资产管理部</option>
+<option value="100192">运营商产品部</option>
+<option value="100193">页面与动态产品部</option>
+<option value="100194">行业解决方案部</option>
+<option value="100195">新媒体产品部</option>
+<option value="100196">销售管理中心</option>
+<option value="100197">产品管理中心</option>
+<option value="100198">北美研发运维中心</option>
+<option value="100199">IX产品部</option>
+<option value="100200">暂无归属部门</option></select>	   
+	   </td></tr>
+
+					 </table>
+				</td>
+                <td align="left" valign="top" width="50%">
+					<table border="0" align="left" width="100%" cellpadding="1" cellspacing="1">
+                                <tr><td class="DataLabel" width=25% height='25'>
+	   日期&nbsp;</td>
+	   <td class="DataField" height='25'>
+       <input type="text" name="f_fdate" value="2015-10-01" style="height:22px; width:70px"><img onclick="lookupDate(this.previousSibling)" src=images/icon_calendar.gif width=16 height=16 border=0 alt="Click to pick up date">	   
+       <input type="text" name="f_fdate_2" value="2015-12-01" style="height:22px; width:70px"><img onclick="lookupDate(this.previousSibling)" src=images/icon_calendar.gif width=16 height=16 border=0 alt="Click to pick up date">
+	   </td></tr>
+          <tr><td class="DataLabel" width=25% height='25'>&nbsp;</td>
+              <td class="DataField" height='25'>&nbsp;</td>
+          </tr>
+
+					</table>	
+				</td>
+            </tr>
+           </table>
+        </td>
+    </tr>
+  </table>
+	</td>
+    <td width="3" align="right" valign="top" background="images/bdri1.gif"><img src="images/bdri1.gif" width="3" height="1"></td>
+  </tr>
+</table>
+
+<table width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td width="50%" height="7" align="left" valign="top" background="images/BD6.gif"><img src="images/BD4.gif" width="39" height="7"></td>
+    <td width="50%" height="7" align="right" valign="top" background="images/BD6.gif"><img src="images/BD5.gif" width="3" height="7"></td>
+  </tr>
+</table>
+
+</form>
+
+
+  </td>
+</tr>
+<tr>
+  <td align="left" valign="top">
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td width="50%" height="9" align="left" valign="top" background="images/bdm.gif"><img src="images/bdleft.gif" width="3" height="9"></td>
+    <td width="50%" height="9" align="right" valign="top" background="images/bdm.gif"><img src="images/bdri.gif" width="70" height="9"></td>
+  </tr>
+</table>
+
+
+<table width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="3" align="left" valign="top" background="images/bdleft1.gif">
+	<img src="images/bdleft1.gif" width="3" height="1"></td>
+	<td align="center" valign="top" bgcolor="DCE4EF">
+	   <table width="100%" height="100%" border="0" cellpadding="10" cellspacing="0">
+        <tr>
+          <td>   
+			<table width="100%" height="20" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="B5DBF7">
+			  <tr> 
+			    <td height="20" colspan="4" class="form3">
+				  <table width="100%" height="20" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+				      <td background="images/11.gif" class="form4">&nbsp;上下班记录列表
+					  </td>
+					</tr>
+	              </table>
+				</td>
+			  </tr>
+				
+              <tr> 
+                <td align="center" bgcolor="F5F8FF" class="form4"> 
+			    	<table width="100%" border="0" align="center" class="ListCustomBar">
+					   <tr>
+							
+							
+								   <td valign="center" align="left"><a href="TRecordReport.action" >上下班记录导出（EXCEL格式）</a></td>
+									   
+								   <td valign="center" align="right" noWrap>
+
+									 <A href="javascript:customTRecordList()">
+										  定制列表格式
+									 </A>
+								   </td>
+							   </tr>
+							</table>
+	    			    </td>
+                 </tr>
+					
+                 <tr> 
+                    <td align="center" bgcolor="F5F8FF" class="form4"> 
+
+						<TABLE class=ListPageLineBG cellSpacing=0 cellPadding=1 width="100%" border=0>
+						  <TR>
+							<TD vAlign=top align=center>
+							  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+								<TR  height=20>
+								  <td valign="center" align="left" noWrap class="ListPageLine" >
+									   记录1-63，总计63条
+								  </td>
+								  <td valign="center" align="right" noWrap class="ListPageLine" >									
+									
+										首页 |
+										  上一页 |
+									
+										  下一页 |
+										  尾页
+									
+									
+								  </td>
+								</TR>
+							  </TABLE>
+							</TD>
+						  </TR>
+						</TABLE>
+<form method="post" name="formDelete" target="_self" >
+							
+							<table  ID="TBL_TRecord" align="center" border="0" width="100%" cellpadding="2" cellspacing="1" class="ListTable" nowrap ><tr class="ListTableHeader"><td width='30'>序号</td><td width='16'><input type='checkbox' name='ControlBox' onclick='javascript:selectAll()'></td><td><a href="javascript:sort('empinfofullname')">姓名</a></td><td><a href="javascript:sort('orgname')">部门</a></td><td><a href="javascript:sort('fdate')">日期</a></td><td><a href="javascript:sort('fbegintime')">到达时间</a></td><td><a href="javascript:sort('fendtime')">离开时间</a></td><td><a href="javascript:sort('fmemo')">备注</a></td><td><a href="javascript:sort('creatorname')">创建人</a></td><td>事项</td></tr>
+<tr class="ListTableRow2" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12656.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12656.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12656.value)"><td class="ListTableHeader">1</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='1'></td><td>于乐</td><td>创新技术部</td><td>2015-12-01</td><td>09:53</td><td>19:19</td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_1' value='2999274'>							  
+							<input type='hidden' name='TRecordValue_1' value="'2,999,274','102,888','于乐','100,133','创新技术部','2015-12-01','09:53','19:19','','102,888','2015-12-01','102,888','2015-12-01','于乐'">								
+							  
+
+								   <a href="javascript:details(2999274)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2999274)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow1" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12657.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12657.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12657.value)"><td class="ListTableHeader">2</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='2'></td><td>于乐</td><td>创新技术部</td><td>2015-11-30</td><td>09:48</td><td>19:54</td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_2' value='2996232'>							  
+							<input type='hidden' name='TRecordValue_2' value="'2,996,232','102,888','于乐','100,133','创新技术部','2015-11-30','09:48','19:54','','102,888','2015-11-30','102,888','2015-11-30','于乐'">								
+							  
+
+								   <a href="javascript:details(2996232)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2996232)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow2" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12658.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12658.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12658.value)"><td class="ListTableHeader">3</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='3'></td><td>于乐</td><td>创新技术部</td><td>2015-11-29</td><td></td><td></td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_3' value='2993193'>							  
+							<input type='hidden' name='TRecordValue_3' value="'2,993,193','102,888','于乐','100,133','创新技术部','2015-11-29','','','','102,888','2015-11-30','102,888','2015-11-30','于乐'">								
+							  
+
+								   <a href="javascript:details(2993193)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2993193)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow1" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12659.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12659.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12659.value)"><td class="ListTableHeader">4</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='4'></td><td>于乐</td><td>创新技术部</td><td>2015-11-28</td><td></td><td></td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_4' value='2990154'>							  
+							<input type='hidden' name='TRecordValue_4' value="'2,990,154','102,888','于乐','100,133','创新技术部','2015-11-28','','','','102,888','2015-11-30','102,888','2015-11-30','于乐'">								
+							  
+
+								   <a href="javascript:details(2990154)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2990154)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow2" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12660.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12660.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12660.value)"><td class="ListTableHeader">5</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='5'></td><td>于乐</td><td>创新技术部</td><td>2015-11-27</td><td>10:00</td><td>20:28</td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_5' value='2987113'>							  
+							<input type='hidden' name='TRecordValue_5' value="'2,987,113','102,888','于乐','100,133','创新技术部','2015-11-27','10:00','20:28','','102,888','2015-11-27','102,888','2015-11-27','于乐'">								
+							  
+
+								   <a href="javascript:details(2987113)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2987113)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow1" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12661.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12661.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12661.value)"><td class="ListTableHeader">6</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='6'></td><td>于乐</td><td>创新技术部</td><td>2015-11-26</td><td>09:57</td><td>19:10</td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_6' value='2984066'>							  
+							<input type='hidden' name='TRecordValue_6' value="'2,984,066','102,888','于乐','100,133','创新技术部','2015-11-26','09:57','19:10','','102,888','2015-11-26','102,888','2015-11-26','于乐'">								
+							  
+
+								   <a href="javascript:details(2984066)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2984066)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow2" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12662.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12662.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12662.value)"><td class="ListTableHeader">7</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='7'></td><td>于乐</td><td>创新技术部</td><td>2015-11-25</td><td>09:41</td><td>18:20</td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_7' value='2981031'>							  
+							<input type='hidden' name='TRecordValue_7' value="'2,981,031','102,888','于乐','100,133','创新技术部','2015-11-25','09:41','18:20','','102,888','2015-11-25','102,888','2015-11-25','于乐'">								
+							  
+
+								   <a href="javascript:details(2981031)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2981031)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow1" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12663.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12663.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12663.value)"><td class="ListTableHeader">8</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='8'></td><td>于乐</td><td>创新技术部</td><td>2015-11-24</td><td>09:48</td><td>20:33</td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_8' value='2977999'>							  
+							<input type='hidden' name='TRecordValue_8' value="'2,977,999','102,888','于乐','100,133','创新技术部','2015-11-24','09:48','20:33','','102,888','2015-11-24','102,888','2015-11-24','于乐'">								
+							  
+
+								   <a href="javascript:details(2977999)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2977999)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow2" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12664.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12664.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12664.value)"><td class="ListTableHeader">9</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='9'></td><td>于乐</td><td>创新技术部</td><td>2015-11-23</td><td>09:50</td><td>20:17</td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_9' value='2974978'>							  
+							<input type='hidden' name='TRecordValue_9' value="'2,974,978','102,888','于乐','100,133','创新技术部','2015-11-23','09:50','20:17','','102,888','2015-11-23','102,888','2015-11-23','于乐'">								
+							  
+
+								   <a href="javascript:details(2974978)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2974978)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow1" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12665.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12665.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12665.value)"><td class="ListTableHeader">10</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='10'></td><td>于乐</td><td>创新技术部</td><td>2015-11-22</td><td></td><td></td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_10' value='2971962'>							  
+							<input type='hidden' name='TRecordValue_10' value="'2,971,962','102,888','于乐','100,133','创新技术部','2015-11-22','','','','102,888','2015-11-23','102,888','2015-11-23','于乐'">								
+							  
+
+								   <a href="javascript:details(2971962)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2971962)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow2" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12666.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12666.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12666.value)"><td class="ListTableHeader">11</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='11'></td><td>于乐</td><td>创新技术部</td><td>2015-11-21</td><td></td><td></td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_11' value='2968000'>							  
+							<input type='hidden' name='TRecordValue_11' value="'2,968,000','102,888','于乐','100,133','创新技术部','2015-11-21','','','','102,888','2015-11-23','102,888','2015-11-23','于乐'">								
+							  
+
+								   <a href="javascript:details(2968000)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2968000)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow1" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12667.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12667.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12667.value)"><td class="ListTableHeader">12</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='12'></td><td>于乐</td><td>创新技术部</td><td>2015-11-21</td><td></td><td></td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_12' value='2968001'>							  
+							<input type='hidden' name='TRecordValue_12' value="'2,968,001','102,888','于乐','100,133','创新技术部','2015-11-21','','','','102,888','2015-11-23','102,888','2015-11-23','于乐'">								
+							  
+
+								   <a href="javascript:details(2968001)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2968001)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow2" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12668.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12668.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12668.value)"><td class="ListTableHeader">13</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='13'></td><td>于乐</td><td>创新技术部</td><td>2015-11-20</td><td></td><td></td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_13' value='2963234'>							  
+							<input type='hidden' name='TRecordValue_13' value="'2,963,234','102,888','于乐','100,133','创新技术部','2015-11-20','','','','102,888','2015-11-20','102,888','2015-11-20','于乐'">								
+							  
+
+								   <a href="javascript:details(2963234)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2963234)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow1" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12669.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12669.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12669.value)"><td class="ListTableHeader">14</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='14'></td><td>于乐</td><td>创新技术部</td><td>2015-11-19</td><td></td><td>21:07</td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_14' value='2960215'>							  
+							<input type='hidden' name='TRecordValue_14' value="'2,960,215','102,888','于乐','100,133','创新技术部','2015-11-19','','21:07','','102,888','2015-11-19','102,888','2015-11-19','于乐'">								
+							  
+
+								   <a href="javascript:details(2960215)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2960215)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow2" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12670.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12670.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12670.value)"><td class="ListTableHeader">15</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='15'></td><td>于乐</td><td>创新技术部</td><td>2015-11-18</td><td>09:56</td><td>21:23</td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_15' value='2957212'>							  
+							<input type='hidden' name='TRecordValue_15' value="'2,957,212','102,888','于乐','100,133','创新技术部','2015-11-18','09:56','21:23','','102,888','2015-11-18','102,888','2015-11-18','于乐'">								
+							  
+
+								   <a href="javascript:details(2957212)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2957212)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow1" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12671.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12671.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12671.value)"><td class="ListTableHeader">16</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='16'></td><td>于乐</td><td>创新技术部</td><td>2015-11-17</td><td>09:54</td><td>21:23</td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_16' value='2954209'>							  
+							<input type='hidden' name='TRecordValue_16' value="'2,954,209','102,888','于乐','100,133','创新技术部','2015-11-17','09:54','21:23','','102,888','2015-11-17','102,888','2015-11-17','于乐'">								
+							  
+
+								   <a href="javascript:details(2954209)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2954209)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow2" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12672.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12672.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12672.value)"><td class="ListTableHeader">17</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='17'></td><td>于乐</td><td>创新技术部</td><td>2015-11-16</td><td>09:58</td><td>19:15</td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_17' value='2951214'>							  
+							<input type='hidden' name='TRecordValue_17' value="'2,951,214','102,888','于乐','100,133','创新技术部','2015-11-16','09:58','19:15','','102,888','2015-11-16','102,888','2015-11-16','于乐'">								
+							  
+
+								   <a href="javascript:details(2951214)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2951214)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow1" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12673.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12673.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12673.value)"><td class="ListTableHeader">18</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='18'></td><td>于乐</td><td>创新技术部</td><td>2015-11-15</td><td></td><td></td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_18' value='2948222'>							  
+							<input type='hidden' name='TRecordValue_18' value="'2,948,222','102,888','于乐','100,133','创新技术部','2015-11-15','','','','102,888','2015-11-16','102,888','2015-11-16','于乐'">								
+							  
+
+								   <a href="javascript:details(2948222)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2948222)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow2" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12674.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12674.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12674.value)"><td class="ListTableHeader">19</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='19'></td><td>于乐</td><td>创新技术部</td><td>2015-11-14</td><td></td><td></td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_19' value='2945230'>							  
+							<input type='hidden' name='TRecordValue_19' value="'2,945,230','102,888','于乐','100,133','创新技术部','2015-11-14','','','','102,888','2015-11-16','102,888','2015-11-16','于乐'">								
+							  
+
+								   <a href="javascript:details(2945230)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2945230)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow1" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12675.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12675.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12675.value)"><td class="ListTableHeader">20</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='20'></td><td>于乐</td><td>创新技术部</td><td>2015-11-13</td><td>09:51</td><td>21:56</td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_20' value='2942238'>							  
+							<input type='hidden' name='TRecordValue_20' value="'2,942,238','102,888','于乐','100,133','创新技术部','2015-11-13','09:51','21:56','','102,888','2015-11-13','102,888','2015-11-13','于乐'">								
+							  
+
+								   <a href="javascript:details(2942238)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2942238)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow2" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12676.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12676.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12676.value)"><td class="ListTableHeader">21</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='21'></td><td>于乐</td><td>创新技术部</td><td>2015-11-12</td><td>09:45</td><td>19:02</td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_21' value='2939246'>							  
+							<input type='hidden' name='TRecordValue_21' value="'2,939,246','102,888','于乐','100,133','创新技术部','2015-11-12','09:45','19:02','','102,888','2015-11-12','102,888','2015-11-12','于乐'">								
+							  
+
+								   <a href="javascript:details(2939246)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2939246)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow1" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12677.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12677.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12677.value)"><td class="ListTableHeader">22</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='22'></td><td>于乐</td><td>创新技术部</td><td>2015-11-11</td><td>09:46</td><td>22:44</td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_22' value='2936256'>							  
+							<input type='hidden' name='TRecordValue_22' value="'2,936,256','102,888','于乐','100,133','创新技术部','2015-11-11','09:46','22:44','','102,888','2015-11-11','102,888','2015-11-11','于乐'">								
+							  
+
+								   <a href="javascript:details(2936256)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2936256)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow2" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12678.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12678.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12678.value)"><td class="ListTableHeader">23</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='23'></td><td>于乐</td><td>创新技术部</td><td>2015-11-10</td><td>09:56</td><td>19:24</td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_23' value='2933269'>							  
+							<input type='hidden' name='TRecordValue_23' value="'2,933,269','102,888','于乐','100,133','创新技术部','2015-11-10','09:56','19:24','','102,888','2015-11-10','102,888','2015-11-10','于乐'">								
+							  
+
+								   <a href="javascript:details(2933269)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2933269)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow1" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12679.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12679.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12679.value)"><td class="ListTableHeader">24</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='24'></td><td>于乐</td><td>创新技术部</td><td>2015-11-09</td><td>09:58</td><td>22:23</td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_24' value='2930281'>							  
+							<input type='hidden' name='TRecordValue_24' value="'2,930,281','102,888','于乐','100,133','创新技术部','2015-11-09','09:58','22:23','','102,888','2015-11-09','102,888','2015-11-09','于乐'">								
+							  
+
+								   <a href="javascript:details(2930281)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2930281)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow2" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12680.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12680.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12680.value)"><td class="ListTableHeader">25</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='25'></td><td>于乐</td><td>创新技术部</td><td>2015-11-08</td><td></td><td></td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_25' value='2928494'>							  
+							<input type='hidden' name='TRecordValue_25' value="'2,928,494','102,888','于乐','100,133','创新技术部','2015-11-08','','','','102,888','2015-11-09','102,888','2015-11-09','于乐'">								
+							  
+
+								   <a href="javascript:details(2928494)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2928494)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow1" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12681.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12681.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12681.value)"><td class="ListTableHeader">26</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='26'></td><td>于乐</td><td>创新技术部</td><td>2015-11-07</td><td></td><td></td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_26' value='2925505'>							  
+							<input type='hidden' name='TRecordValue_26' value="'2,925,505','102,888','于乐','100,133','创新技术部','2015-11-07','','','','102,888','2015-11-09','102,888','2015-11-09','于乐'">								
+							  
+
+								   <a href="javascript:details(2925505)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2925505)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow2" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12682.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12682.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12682.value)"><td class="ListTableHeader">27</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='27'></td><td>于乐</td><td>创新技术部</td><td>2015-11-06</td><td>09:53</td><td>21:07</td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_27' value='2921325'>							  
+							<input type='hidden' name='TRecordValue_27' value="'2,921,325','102,888','于乐','100,133','创新技术部','2015-11-06','09:53','21:07','','102,888','2015-11-06','102,888','2015-11-06','于乐'">								
+							  
+
+								   <a href="javascript:details(2921325)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2921325)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow1" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12683.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12683.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12683.value)"><td class="ListTableHeader">28</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='28'></td><td>于乐</td><td>创新技术部</td><td>2015-11-05</td><td></td><td>19:46</td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_28' value='2918341'>							  
+							<input type='hidden' name='TRecordValue_28' value="'2,918,341','102,888','于乐','100,133','创新技术部','2015-11-05','','19:46','','102,888','2015-11-05','102,888','2015-11-05','于乐'">								
+							  
+
+								   <a href="javascript:details(2918341)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2918341)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow2" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12684.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12684.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12684.value)"><td class="ListTableHeader">29</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='29'></td><td>于乐</td><td>创新技术部</td><td>2015-11-04</td><td>09:37</td><td>20:37</td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_29' value='2915354'>							  
+							<input type='hidden' name='TRecordValue_29' value="'2,915,354','102,888','于乐','100,133','创新技术部','2015-11-04','09:37','20:37','','102,888','2015-11-04','102,888','2015-11-04','于乐'">								
+							  
+
+								   <a href="javascript:details(2915354)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2915354)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow1" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12685.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12685.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12685.value)"><td class="ListTableHeader">30</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='30'></td><td>于乐</td><td>创新技术部</td><td>2015-11-03</td><td>09:28</td><td>20:09</td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_30' value='2912396'>							  
+							<input type='hidden' name='TRecordValue_30' value="'2,912,396','102,888','于乐','100,133','创新技术部','2015-11-03','09:28','20:09','','102,888','2015-11-03','102,888','2015-11-03','于乐'">								
+							  
+
+								   <a href="javascript:details(2912396)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2912396)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow2" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12686.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12686.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12686.value)"><td class="ListTableHeader">31</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='31'></td><td>于乐</td><td>创新技术部</td><td>2015-11-02</td><td>09:37</td><td>20:58</td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_31' value='2909407'>							  
+							<input type='hidden' name='TRecordValue_31' value="'2,909,407','102,888','于乐','100,133','创新技术部','2015-11-02','09:37','20:58','','102,888','2015-11-02','102,888','2015-11-02','于乐'">								
+							  
+
+								   <a href="javascript:details(2909407)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2909407)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow1" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12687.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12687.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12687.value)"><td class="ListTableHeader">32</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='32'></td><td>于乐</td><td>创新技术部</td><td>2015-11-01</td><td></td><td></td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_32' value='2906427'>							  
+							<input type='hidden' name='TRecordValue_32' value="'2,906,427','102,888','于乐','100,133','创新技术部','2015-11-01','','','','102,888','2015-11-02','102,888','2015-11-02','于乐'">								
+							  
+
+								   <a href="javascript:details(2906427)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2906427)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow2" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12688.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12688.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12688.value)"><td class="ListTableHeader">33</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='33'></td><td>于乐</td><td>创新技术部</td><td>2015-10-31</td><td></td><td></td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_33' value='2903447'>							  
+							<input type='hidden' name='TRecordValue_33' value="'2,903,447','102,888','于乐','100,133','创新技术部','2015-10-31','','','','102,888','2015-11-02','102,888','2015-11-02','于乐'">								
+							  
+
+								   <a href="javascript:details(2903447)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2903447)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow1" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12689.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12689.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12689.value)"><td class="ListTableHeader">34</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='34'></td><td>于乐</td><td>创新技术部</td><td>2015-10-30</td><td>09:48</td><td>02:06</td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_34' value='2900463'>							  
+							<input type='hidden' name='TRecordValue_34' value="'2,900,463','102,888','于乐','100,133','创新技术部','2015-10-30','09:48','02:06','','102,888','2015-10-30','102,888','2015-10-30','于乐'">								
+							  
+
+								   <a href="javascript:details(2900463)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2900463)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow2" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12690.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12690.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12690.value)"><td class="ListTableHeader">35</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='35'></td><td>于乐</td><td>创新技术部</td><td>2015-10-29</td><td>09:41</td><td>19:58</td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_35' value='2897481'>							  
+							<input type='hidden' name='TRecordValue_35' value="'2,897,481','102,888','于乐','100,133','创新技术部','2015-10-29','09:41','19:58','','102,888','2015-10-29','102,888','2015-10-29','于乐'">								
+							  
+
+								   <a href="javascript:details(2897481)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2897481)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow1" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12691.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12691.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12691.value)"><td class="ListTableHeader">36</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='36'></td><td>于乐</td><td>创新技术部</td><td>2015-10-28</td><td>17:54</td><td>19:29</td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_36' value='2894501'>							  
+							<input type='hidden' name='TRecordValue_36' value="'2,894,501','102,888','于乐','100,133','创新技术部','2015-10-28','17:54','19:29','','102,888','2015-10-28','102,888','2015-10-28','于乐'">								
+							  
+
+								   <a href="javascript:details(2894501)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2894501)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow2" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12692.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12692.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12692.value)"><td class="ListTableHeader">37</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='37'></td><td>于乐</td><td>创新技术部</td><td>2015-10-27</td><td>09:34</td><td>22:07</td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_37' value='2891525'>							  
+							<input type='hidden' name='TRecordValue_37' value="'2,891,525','102,888','于乐','100,133','创新技术部','2015-10-27','09:34','22:07','','102,888','2015-10-28','102,888','2015-10-28','于乐'">								
+							  
+
+								   <a href="javascript:details(2891525)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2891525)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow1" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12693.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12693.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12693.value)"><td class="ListTableHeader">38</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='38'></td><td>于乐</td><td>创新技术部</td><td>2015-10-26</td><td>09:42</td><td>19:34</td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_38' value='2888908'>							  
+							<input type='hidden' name='TRecordValue_38' value="'2,888,908','102,888','于乐','100,133','创新技术部','2015-10-26','09:42','19:34','','102,888','2015-10-28','102,888','2015-10-28','于乐'">								
+							  
+
+								   <a href="javascript:details(2888908)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2888908)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow2" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12694.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12694.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12694.value)"><td class="ListTableHeader">39</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='39'></td><td>于乐</td><td>创新技术部</td><td>2015-10-25</td><td></td><td></td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_39' value='2885569'>							  
+							<input type='hidden' name='TRecordValue_39' value="'2,885,569','102,888','于乐','100,133','创新技术部','2015-10-25','','','','102,888','2015-10-26','102,888','2015-10-26','于乐'">								
+							  
+
+								   <a href="javascript:details(2885569)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2885569)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow1" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12695.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12695.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12695.value)"><td class="ListTableHeader">40</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='40'></td><td>于乐</td><td>创新技术部</td><td>2015-10-24</td><td></td><td></td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_40' value='2882615'>							  
+							<input type='hidden' name='TRecordValue_40' value="'2,882,615','102,888','于乐','100,133','创新技术部','2015-10-24','','','','102,888','2015-10-26','102,888','2015-10-26','于乐'">								
+							  
+
+								   <a href="javascript:details(2882615)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2882615)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow2" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12696.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12696.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12696.value)"><td class="ListTableHeader">41</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='41'></td><td>于乐</td><td>创新技术部</td><td>2015-10-23</td><td>09:33</td><td>19:27</td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_41' value='2879615'>							  
+							<input type='hidden' name='TRecordValue_41' value="'2,879,615','102,888','于乐','100,133','创新技术部','2015-10-23','09:33','19:27','','102,888','2015-10-23','102,888','2015-10-23','于乐'">								
+							  
+
+								   <a href="javascript:details(2879615)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2879615)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow1" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12697.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12697.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12697.value)"><td class="ListTableHeader">42</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='42'></td><td>于乐</td><td>创新技术部</td><td>2015-10-22</td><td>09:27</td><td>20:46</td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_42' value='2876640'>							  
+							<input type='hidden' name='TRecordValue_42' value="'2,876,640','102,888','于乐','100,133','创新技术部','2015-10-22','09:27','20:46','','102,888','2015-10-22','102,888','2015-10-22','于乐'">								
+							  
+
+								   <a href="javascript:details(2876640)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2876640)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow2" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12698.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12698.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12698.value)"><td class="ListTableHeader">43</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='43'></td><td>于乐</td><td>创新技术部</td><td>2015-10-21</td><td>09:25</td><td>20:23</td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_43' value='2873669'>							  
+							<input type='hidden' name='TRecordValue_43' value="'2,873,669','102,888','于乐','100,133','创新技术部','2015-10-21','09:25','20:23','','102,888','2015-10-21','102,888','2015-10-21','于乐'">								
+							  
+
+								   <a href="javascript:details(2873669)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2873669)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow1" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12699.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12699.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12699.value)"><td class="ListTableHeader">44</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='44'></td><td>于乐</td><td>创新技术部</td><td>2015-10-20</td><td></td><td>21:13</td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_44' value='2870697'>							  
+							<input type='hidden' name='TRecordValue_44' value="'2,870,697','102,888','于乐','100,133','创新技术部','2015-10-20','','21:13','','102,888','2015-10-20','102,888','2015-10-20','于乐'">								
+							  
+
+								   <a href="javascript:details(2870697)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2870697)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow2" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12700.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12700.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12700.value)"><td class="ListTableHeader">45</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='45'></td><td>于乐</td><td>创新技术部</td><td>2015-10-19</td><td>09:28</td><td>21:20</td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_45' value='2867730'>							  
+							<input type='hidden' name='TRecordValue_45' value="'2,867,730','102,888','于乐','100,133','创新技术部','2015-10-19','09:28','21:20','','102,888','2015-10-19','102,888','2015-10-19','于乐'">								
+							  
+
+								   <a href="javascript:details(2867730)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2867730)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow1" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12701.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12701.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12701.value)"><td class="ListTableHeader">46</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='46'></td><td>于乐</td><td>创新技术部</td><td>2015-10-18</td><td></td><td></td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_46' value='2864764'>							  
+							<input type='hidden' name='TRecordValue_46' value="'2,864,764','102,888','于乐','100,133','创新技术部','2015-10-18','','','','102,888','2015-10-19','102,888','2015-10-19','于乐'">								
+							  
+
+								   <a href="javascript:details(2864764)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2864764)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow2" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12702.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12702.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12702.value)"><td class="ListTableHeader">47</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='47'></td><td>于乐</td><td>创新技术部</td><td>2015-10-17</td><td></td><td></td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_47' value='2861797'>							  
+							<input type='hidden' name='TRecordValue_47' value="'2,861,797','102,888','于乐','100,133','创新技术部','2015-10-17','','','','102,888','2015-10-19','102,888','2015-10-19','于乐'">								
+							  
+
+								   <a href="javascript:details(2861797)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2861797)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow1" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12703.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12703.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12703.value)"><td class="ListTableHeader">48</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='48'></td><td>于乐</td><td>创新技术部</td><td>2015-10-16</td><td>09:06</td><td>17:02</td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_48' value='2858829'>							  
+							<input type='hidden' name='TRecordValue_48' value="'2,858,829','102,888','于乐','100,133','创新技术部','2015-10-16','09:06','17:02','','102,888','2015-10-16','102,888','2015-10-16','于乐'">								
+							  
+
+								   <a href="javascript:details(2858829)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2858829)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow2" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12704.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12704.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12704.value)"><td class="ListTableHeader">49</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='49'></td><td>于乐</td><td>创新技术部</td><td>2015-10-15</td><td>09:43</td><td>20:25</td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_49' value='2855859'>							  
+							<input type='hidden' name='TRecordValue_49' value="'2,855,859','102,888','于乐','100,133','创新技术部','2015-10-15','09:43','20:25','','102,888','2015-10-15','102,888','2015-10-15','于乐'">								
+							  
+
+								   <a href="javascript:details(2855859)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2855859)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow1" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12705.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12705.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12705.value)"><td class="ListTableHeader">50</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='50'></td><td>于乐</td><td>创新技术部</td><td>2015-10-14</td><td>09:51</td><td>18:15</td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_50' value='2853597'>							  
+							<input type='hidden' name='TRecordValue_50' value="'2,853,597','102,888','于乐','100,133','创新技术部','2015-10-14','09:51','18:15','','102,888','2015-10-14','102,888','2015-10-14','于乐'">								
+							  
+
+								   <a href="javascript:details(2853597)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2853597)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow2" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12706.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12706.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12706.value)"><td class="ListTableHeader">51</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='51'></td><td>于乐</td><td>创新技术部</td><td>2015-10-13</td><td>09:28</td><td>21:07</td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_51' value='2850637'>							  
+							<input type='hidden' name='TRecordValue_51' value="'2,850,637','102,888','于乐','100,133','创新技术部','2015-10-13','09:28','21:07','','102,888','2015-10-13','102,888','2015-10-13','于乐'">								
+							  
+
+								   <a href="javascript:details(2850637)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2850637)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow1" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12707.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12707.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12707.value)"><td class="ListTableHeader">52</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='52'></td><td>于乐</td><td>创新技术部</td><td>2015-10-12</td><td>09:17</td><td>19:06</td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_52' value='2847678'>							  
+							<input type='hidden' name='TRecordValue_52' value="'2,847,678','102,888','于乐','100,133','创新技术部','2015-10-12','09:17','19:06','','102,888','2015-10-12','102,888','2015-10-12','于乐'">								
+							  
+
+								   <a href="javascript:details(2847678)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2847678)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow2" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12708.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12708.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12708.value)"><td class="ListTableHeader">53</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='53'></td><td>于乐</td><td>创新技术部</td><td>2015-10-11</td><td></td><td></td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_53' value='2844726'>							  
+							<input type='hidden' name='TRecordValue_53' value="'2,844,726','102,888','于乐','100,133','创新技术部','2015-10-11','','','','102,888','2015-10-12','102,888','2015-10-12','于乐'">								
+							  
+
+								   <a href="javascript:details(2844726)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2844726)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow1" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12709.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12709.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12709.value)"><td class="ListTableHeader">54</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='54'></td><td>于乐</td><td>创新技术部</td><td>2015-10-10</td><td>09:19</td><td>19:54</td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_54' value='2841769'>							  
+							<input type='hidden' name='TRecordValue_54' value="'2,841,769','102,888','于乐','100,133','创新技术部','2015-10-10','09:19','19:54','','102,888','2015-10-10','102,888','2015-10-10','于乐'">								
+							  
+
+								   <a href="javascript:details(2841769)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2841769)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow2" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12710.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12710.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12710.value)"><td class="ListTableHeader">55</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='55'></td><td>于乐</td><td>创新技术部</td><td>2015-10-09</td><td>09:32</td><td>18:56</td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_55' value='2838813'>							  
+							<input type='hidden' name='TRecordValue_55' value="'2,838,813','102,888','于乐','100,133','创新技术部','2015-10-09','09:32','18:56','','102,888','2015-10-09','102,888','2015-10-09','于乐'">								
+							  
+
+								   <a href="javascript:details(2838813)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2838813)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow1" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12711.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12711.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12711.value)"><td class="ListTableHeader">56</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='56'></td><td>于乐</td><td>创新技术部</td><td>2015-10-08</td><td>09:18</td><td>20:47</td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_56' value='2835804'>							  
+							<input type='hidden' name='TRecordValue_56' value="'2,835,804','102,888','于乐','100,133','创新技术部','2015-10-08','09:18','20:47','','102,888','2015-10-08','102,888','2015-10-08','于乐'">								
+							  
+
+								   <a href="javascript:details(2835804)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2835804)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow2" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12712.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12712.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12712.value)"><td class="ListTableHeader">57</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='57'></td><td>于乐</td><td>创新技术部</td><td>2015-10-07</td><td></td><td></td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_57' value='2832861'>							  
+							<input type='hidden' name='TRecordValue_57' value="'2,832,861','102,888','于乐','100,133','创新技术部','2015-10-07','','','','102,888','2015-10-08','102,888','2015-10-08','于乐'">								
+							  
+
+								   <a href="javascript:details(2832861)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2832861)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow1" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12713.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12713.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12713.value)"><td class="ListTableHeader">58</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='58'></td><td>于乐</td><td>创新技术部</td><td>2015-10-06</td><td></td><td></td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_58' value='2829918'>							  
+							<input type='hidden' name='TRecordValue_58' value="'2,829,918','102,888','于乐','100,133','创新技术部','2015-10-06','','','','102,888','2015-10-08','102,888','2015-10-08','于乐'">								
+							  
+
+								   <a href="javascript:details(2829918)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2829918)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow2" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12714.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12714.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12714.value)"><td class="ListTableHeader">59</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='59'></td><td>于乐</td><td>创新技术部</td><td>2015-10-05</td><td></td><td></td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_59' value='2826975'>							  
+							<input type='hidden' name='TRecordValue_59' value="'2,826,975','102,888','于乐','100,133','创新技术部','2015-10-05','','','','102,888','2015-10-08','102,888','2015-10-08','于乐'">								
+							  
+
+								   <a href="javascript:details(2826975)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2826975)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow1" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12715.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12715.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12715.value)"><td class="ListTableHeader">60</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='60'></td><td>于乐</td><td>创新技术部</td><td>2015-10-04</td><td></td><td></td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_60' value='2824031'>							  
+							<input type='hidden' name='TRecordValue_60' value="'2,824,031','102,888','于乐','100,133','创新技术部','2015-10-04','','','','102,888','2015-10-08','102,888','2015-10-08','于乐'">								
+							  
+
+								   <a href="javascript:details(2824031)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2824031)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow2" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12716.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12716.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12716.value)"><td class="ListTableHeader">61</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='61'></td><td>于乐</td><td>创新技术部</td><td>2015-10-03</td><td></td><td></td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_61' value='2821087'>							  
+							<input type='hidden' name='TRecordValue_61' value="'2,821,087','102,888','于乐','100,133','创新技术部','2015-10-03','','','','102,888','2015-10-08','102,888','2015-10-08','于乐'">								
+							  
+
+								   <a href="javascript:details(2821087)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2821087)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow1" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12717.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12717.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12717.value)"><td class="ListTableHeader">62</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='62'></td><td>于乐</td><td>创新技术部</td><td>2015-10-02</td><td></td><td></td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_62' value='2818144'>							  
+							<input type='hidden' name='TRecordValue_62' value="'2,818,144','102,888','于乐','100,133','创新技术部','2015-10-02','','','','102,888','2015-10-08','102,888','2015-10-08','于乐'">								
+							  
+
+								   <a href="javascript:details(2818144)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2818144)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr><tr class="ListTableRow2" onmousemove="javascript:tr_onmouseover(formDelete.TRecordValue_12718.value)" onmouseout="javascript:tr_onmouseout(formDelete.TRecordValue_12718.value)" onclick="javascript:tr_onclick(formDelete.TRecordValue_12718.value)"><td class="ListTableHeader">63</td><td width='16'><input type='checkbox' name='DeleteCheckBox' value='63'></td><td>于乐</td><td>创新技术部</td><td>2015-10-01</td><td></td><td></td><td></td><td>于乐</td><td valign=middle>
+
+							  
+							<input type='hidden' name='TRecord_63' value='2815201'>							  
+							<input type='hidden' name='TRecordValue_63' value="'2,815,201','102,888','于乐','100,133','创新技术部','2015-10-01','','','','102,888','2015-10-08','102,888','2015-10-08','于乐'">								
+							  
+
+								   <a href="javascript:details(2815201)"><img src="images/icon_view.gif" width="15"
+									  height="15" border="0" alt="详细信息" align="middle" hspace="3"></a>
+
+								  <a href="javascript:print(2815201)"><img src="images/icon_print.gif" width="15"
+									  height="15" border="0" alt="打印" align="middle" hspace="3"></a>
+							
+							</td></tr></Table>
+		
+</form>							
+
+<form method="post" name="form1" target="_self" action="TRecordList.action" onsubmit="return checkgotopage('1','跳转页数已经大于最大页数，请您重新输入！','跳转页数不是合法数字，请您重新输入！');">
+							<TABLE class=ListPageLineBG cellSpacing=0 cellPadding=1 width="100%" border=0>
+						  <TR>
+							<TD vAlign=top align=center>
+							  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+								<TR  height=20>
+								  <td valign="center" align="left" noWrap class="ListPageLine" >
+									   第1页, 总计1页
+								  </td>
+								  <td valign="center" align="right" noWrap class="ListPageLine">
+								  <input type="Text" name="pageno" size="3">&nbsp;<input type="Button" name="go" style="cursor:hand" value="Go" size="3" onclick="javascript:gotopage('1','跳转页数已经大于最大页数，请您重新输入！','跳转页数不是合法数字，请您重新输入！')">
+								  &nbsp;									
+									
+									      首页 |
+										  上一页 |
+										  
+									
+										  下一页 |
+										  尾页
+																		
+								  </td>
+								</TR>
+							  </TABLE>
+							</TD>
+						  </TR>
+						</TABLE>
+
+                    </td>
+                 </tr>
+			</table>
+		  </td>
+		</tr>  
+	   </table>
+	</td>
+	<td width="3" align="right" valign="top" background="images/bdri1.gif"><img src="images/bdri1.gif" width="3" height="1"></td>
+  </tr>
+</table>
+
+<table width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td width="50%" height="7" align="left" valign="top" background="images/BD6.gif"><img src="images/BD4.gif" width="39" height="7"></td>
+    <td width="50%" height="7" align="right" valign="top" background="images/BD6.gif"><img src="images/BD5.gif" width="3" height="7"></td>
+  </tr>
+</table>
+<input type=hidden name="sort" value= >
+<input type=hidden name="direction" value=1 >
+<input type=hidden name="currentPage" value=1 >
+<input type=hidden name="currentURL" value="TRecordList.action" >
+
+</form>
+
+
+  </td>
+</tr>
+</table>
+  <br>
+  <center>
+  <font class="Copyright1"></font>
+  </center>
+
+</body>
+
+
+
+
+</html>
+
+
+
+
