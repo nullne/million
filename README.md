@@ -1,2 +1,1 @@
-# million
-Practice worth million!
+Practice is worth more than a million!
