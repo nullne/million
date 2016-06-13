@@ -1,0 +1,12 @@
+#!/bin/sh
+mkdir -p {{ .WorkingPath}}
+bin={{ .WorkingPath }}/{{ .BinName}}
+if [ -f "$bin" ];then
+if `/usr/bin/md5sum md5 |awk '{print $1}'` != "{{ .BinMd5Sum}}";then
+curl {{ .BinUrl }} -o $bin -s
+fi
+else
+curl {{ .BinUrl }} -o $bin -s
+fi
+nohup  $bin >>outout 2>&1 &
+echo $!

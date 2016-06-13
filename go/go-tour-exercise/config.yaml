@@ -1,0 +1,9 @@
+foo: 1
+bar:
+  - one: nice
+    two: to
+    three: you
+  - one: nice
+    two: to
+    three: meet
+    fours: you  

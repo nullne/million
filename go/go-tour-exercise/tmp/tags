@@ -1,0 +1,10 @@
+Mmake-tar.go	./make-tar.go	/^func main() {$/
+Mregexp-problem.go	./regexp-problem.go	/^func main() {$/
+Mt.go	./t.go	/^func main() {$/
+Mtest.go	./test.go	/^func main() {$/
+Mtest1.go	./test1.go	/^func main() {$/
+func	./t.go	/^func (f *foo) add(res res) {$/
+import	./make-tar.go	/^import ($/
+init	./regexp-problem.go	/^func init() {$/
+test	./test1.go	/^func test(t []int) {$/
+the	./pig.go	/^\/\/ roll returns the (result, turnIsOver) outcome/
